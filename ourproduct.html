@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Format | Order</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://pbs.twimg.com/media/G9fZCavbYAAAmJ2?format=png&name=small">
+</head>
+<body class="bg-light">
+    <nav class="navbar">
+        <div class="nav-container">
+          <a href="index.html" class="logo">WAVEYPIX</a>
+      
+          <button class="burger" id="burger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+      
+          <ul class="nav-links" id="nav-links">
+            <!-- Close button -->
+            <button class="close-btn" id="close-menu" aria-label="Close menu">
+              &times;
+            </button>
+      
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ourproduct.html">Order</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+   
+
+
+
+
+
+
+      <section class="container mx-auto py-20 px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-serif mb-4">Pilih Format Anda</h2>
+            <p class="text-gray-500 font-light">Cipta kenangan fizikal dengan saiz yang sempurna.</p>
+        </div>
+    
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="card p-6 group" data-name="Instax Mini" data-price="1.00">
+                <div class="aspect-[54/86] bg-gray-100 border-[10px] border-white shadow-xl mb-6 transition-transform group-hover:scale-105 flex items-end justify-center pb-4">
+                    <span class="text-[10px] tracking-widest text-gray-300 uppercase font-bold">2R / Mini</span>
+                </div>
+                <h3 class="text-xl font-bold mb-1">Instax Mini</h3>
+                <p class="text-xs text-gray-500 mb-4">54 x 86 mm • Wallet Size</p>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-blue-600 font-bold">RM 1.00</span>
+                    <button class="btn-add-cart bg-black text-white px-4 py-2 text-xs font-bold uppercase tracking-tighter hover:bg-blue-600 transition">Tambah</button>
+                </div>
+            </div>
+    
+            <div class="card p-6 group" data-name="Instax Square" data-price="2.00">
+                <div class="aspect-square bg-gray-100 border-[10px] border-white shadow-xl mb-6 transition-transform group-hover:scale-105 flex items-end justify-center pb-4">
+                    <span class="text-[10px] tracking-widest text-gray-300 uppercase font-bold">Square Format</span>
+                </div>
+                <h3 class="text-xl font-bold mb-1">Instax Square</h3>
+                <p class="text-xs text-gray-500 mb-4">72 x 86 mm • Modern Retro</p>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-blue-600 font-bold">RM 2.00</span>
+                    <button class="btn-add-cart bg-black text-white px-4 py-2 text-xs font-bold uppercase tracking-tighter hover:bg-blue-600 transition">Tambah</button>
+                </div>
+            </div>
+    
+            <div class="card p-6 group" data-name="Instax Wide" data-price="3.00">
+                <div class="aspect-[108/86] bg-gray-100 border-[10px] border-white shadow-xl mb-6 transition-transform group-hover:scale-105 flex items-end justify-center pb-4">
+                    <span class="text-[10px] tracking-widest text-gray-300 uppercase font-bold">Wide Landscape</span>
+                </div>
+                <h3 class="text-xl font-bold mb-1">Instax Wide</h3>
+                <p class="text-xs text-gray-500 mb-4">108 x 86 mm • Group Shots</p>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-blue-600 font-bold">RM 3.00</span>
+                    <button class="btn-add-cart bg-black text-white px-4 py-2 text-xs font-bold uppercase tracking-tighter hover:bg-blue-600 transition">Tambah</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <button id="cart-minimized" class="fixed bottom-6 right-6 bg-black text-white p-4 rounded-full shadow-2xl hidden z-50 flex items-center gap-3 animate-bounce">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+        <span id="cart-count" class="font-bold">0</span>
+    </button>
+    
+    <div id="cart-drawer" class="fixed bottom-0 right-0 h-fit w-full md:w-[400px] bg-white shadow-[-10px_0_30px_rgba(0,0,0,0.1)] z-[100] transform translate-x-full transition-transform duration-500 flex flex-col">
+        <div class="p-6 border-b flex justify-between items-center bg-gray-50">
+            <h2 class="text-xl font-bold">Bakul Saya</h2>
+            <button id="close-drawer" class="text-2xl">&times;</button>
+        </div>
+        
+        <div id="drawer-items" class="flex-grow overflow-y-auto p-6 space-y-6">
+            </div>
+    
+        <div class="p-6 border-t space-y-4">
+            <div class="flex justify-between text-xl font-bold">
+                <span>Total</span>
+                <span class="text-blue-600">RM <span id="drawer-total">0.00</span></span>
+            </div>
+            <button id="whatsapp-checkout" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold text-lg hover:opacity-90 transition">
+                Proceed to WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <div class="ad-wrapperr">
+        <div class="ad-leaderboard">
+            <div class="ad-brand">
+                WAVEYPIX
+                <span class="ad-badge">AD</span>
+            </div>
+    
+            <div class="ad-ticker-container">
+                <div class="ad-ticker-content">
+                    <span class="ad-offer">🔥 PROMO 2R: 50 PCS RM45 SAHAJA!</span>
+                    <span class="ad-offer">📸 GAMBAR JELAS & TAHAN LAMA</span>
+                    <span class="ad-offer">⚡ SIAP DALAM 24 JAM</span>
+                    <span class="ad-offer">🎁 FREE ALBUM UNTUK 10 PEMBELI PERTAMA</span>
+                    <span class="ad-offer">🔥 PROMO 2R: 50 PCS RM45 SAHAJA!</span>
+                    <span class="ad-offer">📸 GAMBAR JELAS & TAHAN LAMA</span>
+                    <span class="ad-offer">⚡ SIAP DALAM 24 JAM</span>
+                    <span class="ad-offer">🎁 FREE ALBUM UNTUK 10 PEMBELI PERTAMA</span>
+                </div>
+            </div>
+    
+            <a href="ourproduct.html" class="ad-cta">ORDER NOW</a>
+        </div>
+    </div>
+
+
+
+
+    <section class="copy-section py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            <div class="relative">
+                <div class="bg-gray-100 p-4 shadow-2xl rotate-[-3deg] transition-transform hover:rotate-0 duration-500">
+                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070" alt="Hands holding polaroid" class="w-full grayscale-[20%]">
+                    <p class="mt-4 font-serif italic text-center text-gray-400">Captured: Summer '24</p>
+                </div>
+                <div class="hidden md:block absolute -bottom-8 -right-8 w-32 h-32 border-2 border-black opacity-10"></div>
+            </div>
+    
+            <div class="space-y-6">
+                <h4 class="uppercase tracking-widest text-xs font-semibold text-blue-600">The Analog Revival</h4>
+                <h2 class="text-4xl md:text-5xl leading-tight">Because memories aren't meant to be <i>hidden</i> in a gallery.</h2>
+                
+                <div class="space-y-4 font-light text-gray-600 leading-relaxed">
+                    <p>
+                        Kita mengambil ribuan foto setiap tahunnya, namun berapa banyak yang benar-benar kita "sentuh"? Di tengah dunia yang serba digital, ada keajaiban yang tak tergantikan saat memegang lembaran fisik foto di tangan Anda.
+                    </p>
+                    <p>
+                        <strong>Cetak Polaroid bukan sekadar hobi,</strong> melainkan cara kita menghargai momen yang terlalu berharga untuk sekadar dilupakan di dalam memori ponsel.
+                    </p>
+                </div>
+    
+                <ul class="space-y-3 pt-4">
+                    <li class="flex items-center gap-3">
+                        <span class="w-5 h-[1px] bg-black"></span>
+                        <span class="text-sm font-semibold uppercase tracking-tighter">Premium Matte Finish</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-5 h-[1px] bg-black"></span>
+                        <span class="text-sm font-semibold uppercase tracking-tighter">Everlasting Color Quality</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+  
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column footer-brand">
+                <h2 class="footer-logo">WAVEYPIX<span>.</span></h2>
+                <p class="footer-tagline">Turning digital moments into physical treasures since 2025.</p>
+            </div>
+    
+            <div class="footer-column">
+                <h4 class="footer-heading">Hubungi Kami</h4>
+                <ul class="footer-list">
+                    <li><a href="tel:+601115147474">+60 11-1514 7474</a></li>
+                    <li><a href="mailto:fazlinjanudin@gmail.com">fazlinjanudin@gmail.com</a></li>
+                    <li class="footer-address">Pahang, Malaysia</li>
+                </ul>
+            </div>
+    
+            <div class="footer-column">
+                <h4 class="footer-heading">Ikuti Kami</h4>
+                <div class="social-links">
+                  
+                        <a href="https://www.instagram.com/scentsbyzilaaa?igsh=MXRqNjEwcmRvZGxjNw%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1WPGwJH3uG/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.tiktok.com/@youare11thebest?_r=1&_t=ZS-92WgnxOz32H"><i class="fab fa-tiktok"></i></a>
+                 
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <div class="footer-container">
+                <p>&copy; 2026 Waveypix. Semua Hak Terpelihara.</p>
+            </div>
+        </div>
+    </footer>
+
+
+ 
+
+    <div id="bottom-add">
+      <button class="ad-close" onclick="closeAd()">×</button>
+    
+      <a href="collection.html">
+        <img 
+          src="https://pbs.twimg.com/media/G9fmkfka0AA914O?format=jpg&name=900x900" 
+          alt="Promotion"
+        />
+      </a>
+    </div>
+    
+
+   
+    <script src="main.js"></script>
+
+   
+</body>
+</html>
