@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hubungi Kami | Contact</title>
+    <title>Contact | Waveypix</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -83,5 +83,31 @@
         </div>
     </section>
     <script src="main.js"></script>
+    <script>
+           document.getElementById('direct-form').addEventListener('submit', function(e) {
+    // 1. Prevent the form from actually submitting/refreshing the page
+    e.preventDefault();
+
+    // 2. Get the values from the input fields
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+
+    // 3. Set your WhatsApp phone number (with country code, no "+" or "-")
+    // Example: 60123456789 for Malaysia
+    const phoneNumber = "601115147474"; 
+
+    // 4. Format the message for better readability
+    const fullMessage = `Halo Waveypix! 👋\n\n` +
+                        `*Nama:* ${name}\n` +
+                        `*Mesej:* ${message}\n\n` +
+                        `_Hantar dari borang laman web._`;
+
+    // 5. Create the encoded URL
+    const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
+
+    // 6. Open WhatsApp in a new tab
+    window.open(waUrl, '_blank');
+});
+    </script>
 </body>
 </html>
